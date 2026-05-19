@@ -9,28 +9,28 @@
   // ─── DATOS ───────────────────────────────────────────────────────────────────
   const NOVEDADES = [
     {
-      img: "public/Imagenes/One piece.jpg",
+      img: "Imagenes/One piece.jpg",
       alt: "One Piece",
       titulo: "One Piece",
       desc: "El fenómeno global que continúa sumando nuevos lectores todos los días.",
       badge: "HOT",
     },
     {
-      img: "public/Imagenes/Blue lock 36.jpg",
+      img: "Imagenes/Blue lock 36.jpg",
       alt: "Blue Lock",
       titulo: "Blue Lock",
       desc: "Uno de los mangas deportivos más virales de los últimos años.",
       badge: "NUEVO",
     },
     {
-      img: "public/Imagenes/chainsawman01.jpg",
+      img: "Imagenes/chainsawman01.jpg",
       alt: "Chainsaw Man",
       titulo: "Chainsaw Man",
       desc: "Uno de los títulos más comentados por las comunidades anime actuales.",
       badge: null,
     },
     {
-      img: "public/Imagenes/jujutsu kaisen.jpg",
+      img: "Imagenes/jujutsu kaisen.jpg",
       alt: "Jujutsu Kaisen",
       titulo: "Jujutsu Kaisen",
       desc: "Las nuevas generaciones se incorporan al mundo manga todos los meses.",
@@ -396,7 +396,7 @@
                   <div className="space-y-5">
                     <div className="overflow-hidden rounded-[24px] border border-zinc-800 bg-zinc-900 shadow-2xl">
                       <img
-                        src="public/Imagenes/One piece.jpg"
+                        src="Imagenes/One piece.jpg"
                         alt="One Piece"
                         loading="lazy"
                         onError={(e) => { e.target.style.display = "none"; }}
@@ -517,7 +517,7 @@
                 </div>
                 <h2 className="text-5xl font-black leading-[0.95] tracking-tight md:text-6xl">
                   Títulos nuevos{" "}
-                  <span className="text-red-500">todas las semanas</span>
+                  <span className="text-white-500">todas las semanas</span>
                 </h2>
                 <p className="mt-6 text-lg leading-relaxed text-zinc-200">
                   El universo manga crece constantemente. Nuestro catálogo se
