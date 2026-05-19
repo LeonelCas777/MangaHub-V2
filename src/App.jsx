@@ -9,32 +9,32 @@
   // ─── DATOS ───────────────────────────────────────────────────────────────────
   const NOVEDADES = [
     {
-      img: "Imagenes/one-piece.jpg",
-      alt: "One Piece",
-      titulo: "One Piece",
-      desc: "El fenómeno global que continúa sumando nuevos lectores todos los días.",
-      badge: "HOT",
-    },
-    {
-      img: "Imagenes/blue-lock.jpg",
-      alt: "Blue Lock",
-      titulo: "Blue Lock",
-      desc: "Uno de los mangas deportivos más virales de los últimos años.",
+      img: "Imagenes/dragon-ball-super-24.jpg",
+      alt: "Dragon Ball Super",
+      titulo: "Dragon Ball Super",
+      desc: "La obra que marcó generaciones enteras y sigue siendo una puerta de entrada al mundo del manga para miles de lectores.",
       badge: "NUEVO",
     },
     {
-      img: "Imagenes/chainsawman.jpg",
-      alt: "Chainsaw Man",
-      titulo: "Chainsaw Man",
-      desc: "Uno de los títulos más comentados por las comunidades anime actuales.",
-      badge: null,
+      img: "Imagenes/blue-lock-36.webp",
+      alt: "Blue Lock",
+      titulo: "Blue Lock",
+      desc: "El manga que convirtió al fútbol en una batalla psicológica. Rivalidades intensas, personajes virales y una comunidad muy activa.",
+      badge: "NUEVO",
     },
     {
-      img: "Imagenes/jujutsu-kaisen.jpg",
-      alt: "Jujutsu Kaisen",
-      titulo: "Jujutsu Kaisen",
-      desc: "Las nuevas generaciones se incorporan al mundo manga todos los meses.",
-      badge: "HOT",
+      img: "Imagenes/chainsaw-man-22.jpg",
+      alt: "Chainsaw Man",
+      titulo: "Chainsaw Man",
+      desc: "Una obra violenta y totalmente distinta a lo clásico. Chainsaw Man explotó por su estilo caótico y personajes impredecibles.",
+      badge: "NUEVO",
+    },
+    {
+      img: "Imagenes/demon-slayer-23.png",
+      alt: "Demon Slayer",
+      titulo: "Demon Slayer",
+      desc: "Uno de los mangas que más nuevos lectores atrajo. Peleas memorables, arte impactante y una historia muy emocional.",
+      badge: "NUEVO",
     },
   ];
 
@@ -446,11 +446,11 @@
                   <div className="space-y-5">
                     <div className="overflow-hidden rounded-[24px] border border-zinc-800 bg-zinc-900/60 backdrop-blur-md border border-zinc-800 shadow-2xl">
                       <img
-                        src="Imagenes/one-piece-2.jpg"
+                        src="Imagenes/luffy-1.jpg"
                         alt="One Piece"
                         loading="lazy"
                         onError={(e) => { e.target.style.display = "none"; }}
-                        className="h-[320px] w-full object-cover object-top"
+                        className="aspect-[2/3] w-full object-cover object-center"
                       />
                     </div>
                     <div className="rounded-[24px] border border-zinc-800 bg-zinc-900/60 backdrop-blur-md border border-zinc-800 p-6">
@@ -470,11 +470,11 @@
                     </div>
                     <div className="overflow-hidden rounded-[24px] border border-zinc-800 bg-zinc-900/60 backdrop-blur-md border border-zinc-800 shadow-2xl">
                       <img
-                        src="/Imagenes/blue-lock.jpg"
+                        src="/Imagenes/blue-lock-2.jpg"
                         alt="Blue Lock"
                         loading="lazy"
                         onError={(e) => { e.target.style.display = "none"; }}
-                        className="h-[320px] w-full object-cover object-top"
+                        className="aspect-[2/3] w-full object-cover object-center"
                       />
                     </div>
                   </div>
@@ -596,7 +596,7 @@
                           e.target.parentElement.innerHTML =
                             `<div class="flex h-[220px] items-center justify-center bg-zinc-800 rounded-2xl text-zinc-600 text-sm">${n.titulo}</div>`;
                         }}
-                        className="h-[220px] w-full rounded-2xl object-cover transition duration-500 group-hover:scale-105"
+                        className="aspect-[2/3] w-full object-cover object-center"
                       />
                     </div>
                     <h3 className="mt-5 text-xl font-black">{n.titulo}</h3>
