@@ -9,28 +9,28 @@
   // ─── DATOS ───────────────────────────────────────────────────────────────────
   const NOVEDADES = [
     {
-      img: "Imagenes/One piece.jpg",
+      img: "Imagenes/one-piece.jpg",
       alt: "One Piece",
       titulo: "One Piece",
       desc: "El fenómeno global que continúa sumando nuevos lectores todos los días.",
       badge: "HOT",
     },
     {
-      img: "Imagenes/Blue lock 36.jpg",
+      img: "Imagenes/blue-lock.jpg",
       alt: "Blue Lock",
       titulo: "Blue Lock",
       desc: "Uno de los mangas deportivos más virales de los últimos años.",
       badge: "NUEVO",
     },
     {
-      img: "Imagenes/chainsawman01.jpg",
+      img: "Imagenes/chainsawman.jpg",
       alt: "Chainsaw Man",
       titulo: "Chainsaw Man",
       desc: "Uno de los títulos más comentados por las comunidades anime actuales.",
       badge: null,
     },
     {
-      img: "Imagenes/jujutsu kaisen.jpg",
+      img: "Imagenes/jujutsu-kaisen.jpg",
       alt: "Jujutsu Kaisen",
       titulo: "Jujutsu Kaisen",
       desc: "Las nuevas generaciones se incorporan al mundo manga todos los meses.",
@@ -396,7 +396,7 @@
                   <div className="space-y-5">
                     <div className="overflow-hidden rounded-[24px] border border-zinc-800 bg-zinc-900 shadow-2xl">
                       <img
-                        src="Imagenes/One piece.jpg"
+                        src="Imagenes/one-piece.jpg"
                         alt="One Piece"
                         loading="lazy"
                         onError={(e) => { e.target.style.display = "none"; }}
@@ -420,7 +420,7 @@
                     </div>
                     <div className="overflow-hidden rounded-[24px] border border-zinc-800 bg-zinc-900 shadow-2xl">
                       <img
-                        src="/Imagenes/Blue lock 36.webp"
+                        src="/Imagenes/blue-lock.jpg"
                         alt="Blue Lock"
                         loading="lazy"
                         onError={(e) => { e.target.style.display = "none"; }}
@@ -446,8 +446,8 @@
                   Por qué elegirnos
                 </div>
                 <h2 className="text-4xl font-black leading-tight text-white md:text-5xl">
-                  El socio que tu{" "}
-                  <span className="text-red-500">comiquería</span> necesita
+                  Distribución oficial de mangas{" "}
+                  <span className="text-red-500">IVREA</span>
                 </h2>
                 <p className="mt-6 text-lg leading-relaxed text-zinc-300">
                   No solo vendemos mangas: te acompañamos para que armes un negocio
