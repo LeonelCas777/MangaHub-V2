@@ -2,7 +2,7 @@
 
   // ─── CONFIGURACIÓN CENTRAL ───────────────────────────────────────────────────
   const WA_NUMBER = "5490000000000"; // ← Cambiá este número
-  const WA_BASE = `https://wa.me/${WA_NUMBER}`;
+  const WA_BASE = "https://wa.link/8d92mj";
   const WA = (msg = "") =>
     msg ? `${WA_BASE}?text=${encodeURIComponent(msg)}` : WA_BASE;
 
@@ -257,16 +257,66 @@
     </svg>
   );
 
+  const HERO_VOLUMES = [
+    {
+      src: "/Imagenes/jujutsu-kaisen.jpg",
+      alt: "Jujutsu Kaisen",
+      className: "hero-volume hero-volume--jjk",
+    },
+    {
+      src: "/Imagenes/chainsawman.jpg",
+      alt: "Chainsaw Man",
+      className: "hero-volume hero-volume--chainsaw",
+    },
+    {
+      src: "/Imagenes/blue-lock.jpg",
+      alt: "Blue Lock",
+      className: "hero-volume hero-volume--blue-lock",
+    },
+    {
+      src: "/Imagenes/one-piece.jpg",
+      alt: "One Piece",
+      className: "hero-volume hero-volume--one-piece",
+    },
+  ];
+
+  function HeroVisual() {
+    return (
+      <div className="hero-visual" aria-hidden="true">
+        <div className="hero-visual__ambient" />
+        <div className="hero-visual__ambient-secondary" />
+        <div className="hero-visual__floor" />
+        <div className="hero-visual__stage">
+          {HERO_VOLUMES.map((vol) => (
+            <div key={vol.alt} className={vol.className}>
+              <img
+                src={vol.src}
+                alt=""
+                loading="eager"
+                decoding="async"
+                onError={(e) => {
+                  e.currentTarget.style.display = "none";
+                }}
+              />
+            </div>
+          ))}
+        </div>
+        <div className="hero-visual__glass" />
+        <div className="hero-visual__rim" />
+      </div>
+    );
+  }
+
   function FaqItem({ q, a }) {
     const [open, setOpen] = useState(false);
     return (
-      <div className="rounded-2xl border border-zinc-800 bg-zinc-900 overflow-hidden transition-all">
+      <div className="rounded-2xl border border-zinc-800 bg-zinc-900/60 backdrop-blur-md border border-zinc-800 overflow-hidden transition-all">
         <button
           onClick={() => setOpen(!open)}
-          className="flex w-full items-center justify-between gap-4 px-7 py-5 text-left transition hover:bg-zinc-800/50"
+          className="flex w-full items-center justify-between gap-4 px-7 py-5 text-left transition-all duration-300 hover:bg-zinc-800/50"
           aria-expanded={open}
         >
-          <span className="font-semibold text-white">{q}</span>
+          <span className="font-semibold text-zinc-100">{q}</span>
           <span
             className={`flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
               open
@@ -302,23 +352,23 @@
           <meta property="og:type" content="website" />
         */}
 
-        <div className="min-h-screen overflow-hidden bg-black text-white scroll-smooth">
+        <div className="min-h-screen overflow-hidden bg-zinc-950 text-zinc-100 scroll-smooth">
 
           {/* ── NAVBAR ──────────────────────────────────────────────────────── */}
-          <header className="sticky top-0 z-50 border-b border-zinc-900 bg-black/75 backdrop-blur-xl">
+          <header className="sticky top-0 z-50 border-b border-zinc-900 bg-zinc-950/75 backdrop-blur-xl">
             <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
 
               <a href="#hero" className="text-2xl font-black tracking-tight">
-                Manga<span className="text-red-500">Hub</span>
+                Manga<span className="text-red-400">Hub</span>
               </a>
 
               <nav className="ml-auto hidden items-center gap-8 text-sm font-medium text-zinc-200 md:flex">
-                <a href="#elegirnos" className="transition hover:text-white">Por qué elegirnos</a>
-                <a href="#novedades" className="transition hover:text-white">Novedades</a>
-                <a href="#beneficios" className="transition hover:text-white">Beneficios</a>
-                <a href="#como" className="transition hover:text-white">Cómo funciona</a>
-                <a href="#ivrea" className="transition hover:text-white">Catálogo Ivrea</a>
-                <a href="#faq" className="transition hover:text-white">FAQ</a>
+                <a href="#elegirnos" className="transition-all duration-300 hover:text-zinc-100">Por qué elegirnos</a>
+                <a href="#novedades" className="transition-all duration-300 hover:text-zinc-100">Novedades</a>
+                <a href="#beneficios" className="transition-all duration-300 hover:text-zinc-100">Beneficios</a>
+                <a href="#como" className="transition-all duration-300 hover:text-zinc-100">Cómo funciona</a>
+                <a href="#ivrea" className="transition-all duration-300 hover:text-zinc-100">Catálogo Ivrea</a>
+                <a href="#faq" className="transition-all duration-300 hover:text-zinc-100">FAQ</a>
               </nav>
             </div>
           </header>
@@ -326,13 +376,13 @@
           {/* ── HERO ────────────────────────────────────────────────────────── */}
           <section
             id="hero"
-            className="relative overflow-hidden border-b border-zinc-900 bg-black"
+            className="relative overflow-hidden border-b border-zinc-900 bg-zinc-950"
             style={{ scrollMarginTop: "80px" }}
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(220,38,38,0.18),transparent_30%)]" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.08),transparent_30%)]" />
 
-            <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-6 pb-24 pt-20 lg:grid-cols-2 lg:pt-28">
+            <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 pb-20 pt-16 sm:gap-16 sm:pb-24 sm:pt-20 lg:grid-cols-[1fr_1.05fr] lg:gap-24 lg:pb-28 lg:pt-24 xl:gap-32">
 
               {/* LEFT */}
               <div>
@@ -343,7 +393,7 @@
 
                 <h1 className="max-w-2xl text-5xl font-black leading-[0.95] tracking-tight md:text-7xl">
                   Conectá con el mundo del{" "}
-                  <span className="text-red-500">MANGA</span>
+                  <span className="text-red-400">MANGA</span>
                 </h1>
 
                 <p className="mt-8 max-w-xl text-lg leading-relaxed text-zinc-200">
@@ -357,7 +407,7 @@
                     href={WA("Hola! Quiero consultar sobre venta mayorista de mangas en MangaHub")}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 rounded-2xl bg-red-600 px-8 py-4 text-base font-semibold transition hover:scale-[1.02] hover:bg-red-500 active:scale-[0.99]"
+                    className="flex items-center justify-center gap-2 rounded-2xl bg-green-500 px-8 py-4 text-base font-semibold transition-all duration-300 hover:scale-[1.02] hover:bg-red-500 active:scale-[0.99]"
                   >
                     <WhatsAppIcon className="h-5 w-5" />
                     Quiero más información
@@ -365,7 +415,7 @@
 
                   <a
                     href="#novedades"
-                    className="flex items-center justify-center rounded-2xl border border-zinc-700 bg-zinc-900/60 px-8 py-4 text-base font-semibold transition hover:border-zinc-500 hover:bg-zinc-800"
+                    className="flex items-center justify-center rounded-2xl border border-zinc-700 bg-zinc-900/60 px-8 py-4 text-base font-semibold transition-all duration-300 hover:border-zinc-500 hover:bg-zinc-800"
                   >
                     Explorar títulos
                   </a>
@@ -394,16 +444,16 @@
 
                 <div className="grid grid-cols-2 gap-5">
                   <div className="space-y-5">
-                    <div className="overflow-hidden rounded-[24px] border border-zinc-800 bg-zinc-900 shadow-2xl">
+                    <div className="overflow-hidden rounded-[24px] border border-zinc-800 bg-zinc-900/60 backdrop-blur-md border border-zinc-800 shadow-2xl">
                       <img
-                        src="Imagenes/one-piece.jpg"
+                        src="Imagenes/one-piece-2.jpg"
                         alt="One Piece"
                         loading="lazy"
                         onError={(e) => { e.target.style.display = "none"; }}
                         className="h-[320px] w-full object-cover object-top"
                       />
                     </div>
-                    <div className="rounded-[24px] border border-zinc-800 bg-zinc-900 p-6">
+                    <div className="rounded-[24px] border border-zinc-800 bg-zinc-900/60 backdrop-blur-md border border-zinc-800 p-6">
                       <div className="text-xl font-black">One Piece</div>
                       <p className="mt-2 text-sm leading-relaxed text-zinc-200">
                         El fenómeno global que sigue sumando lectores todos los días.
@@ -412,13 +462,13 @@
                   </div>
 
                   <div className="mt-10 space-y-5">
-                    <div className="rounded-[24px] border border-zinc-800 bg-zinc-900 p-6">
+                    <div className="rounded-[24px] border border-zinc-800 bg-zinc-900/60 backdrop-blur-md border border-zinc-800 p-6">
                       <div className="text-xl font-black">Blue Lock</div>
                       <p className="mt-2 text-sm leading-relaxed text-zinc-200">
                         Uno de los mangas deportivos más virales de los últimos años.
                       </p>
                     </div>
-                    <div className="overflow-hidden rounded-[24px] border border-zinc-800 bg-zinc-900 shadow-2xl">
+                    <div className="overflow-hidden rounded-[24px] border border-zinc-800 bg-zinc-900/60 backdrop-blur-md border border-zinc-800 shadow-2xl">
                       <img
                         src="/Imagenes/blue-lock.jpg"
                         alt="Blue Lock"
@@ -436,7 +486,7 @@
           {/* ── POR QUÉ ELEGIRNOS ───────────────────────────────────────────── */}
           <section
             id="elegirnos"
-            className="border-y border-zinc-900 bg-black py-28"
+            className="border-y border-zinc-900 bg-zinc-950 py-28"
             style={{ scrollMarginTop: "80px" }}
           >
 
@@ -445,21 +495,21 @@
                 <div className="mb-5 inline-flex rounded-full border border-zinc-700 bg-zinc-900/80 px-4 py-2 text-sm text-zinc-300">
                   Por qué elegirnos
                 </div>
-                <h2 className="text-4xl font-black leading-tight text-white md:text-5xl">
+                <h2 className="text-4xl font-black leading-tight text-zinc-100 md:text-5xl">
                   Distribución oficial de mangas{" "}
-                  <span className="text-red-500">IVREA</span>
+                  <span className="text-red-400">IVREA</span>
                 </h2>
                 <p className="mt-6 text-lg leading-relaxed text-zinc-300">
-                  No solo vendemos mangas: te acompañamos para que armes un negocio
-                  rentable con títulos que ya tienen público, stock actualizado y
-                  logística pensada para revendedores y locales geek.
+                  Trabajamos con tiendas y emprendimientos de todo el país 
+                  ofreciendo lanzamientos constantes, stock actualizado y 
+                  una operatoria optimizada semana a semana.
                 </p>
               </div>
 
               <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
 
         <div className="rounded-[28px] border border-zinc-800 bg-zinc-900/60 p-8">
-          <h3 className="text-2xl font-bold text-white">
+          <h3 className="text-2xl font-bold text-zinc-100">
             🔒 Compra segura
           </h3>
 
@@ -469,7 +519,7 @@
         </div>
 
         <div className="rounded-[28px] border border-zinc-800 bg-zinc-900/60 p-8">
-          <h3 className="text-2xl font-bold text-white">
+          <h3 className="text-2xl font-bold text-zinc-100">
             🚚 Envíos a todo el país
           </h3>
 
@@ -479,7 +529,7 @@
         </div>
 
         <div className="rounded-[28px] border border-zinc-800 bg-zinc-900/60 p-8">
-          <h3 className="text-2xl font-bold text-white">
+          <h3 className="text-2xl font-bold text-zinc-100">
             📦 Lanzamientos constantes
           </h3>
 
@@ -489,7 +539,7 @@
         </div>
 
         <div className="rounded-[28px] border border-zinc-800 bg-zinc-900/60 p-8">
-          <h3 className="text-2xl font-bold text-white">
+          <h3 className="text-2xl font-bold text-zinc-100">
             💬 Soporte real
           </h3>
 
@@ -517,7 +567,7 @@
                 </div>
                 <h2 className="text-5xl font-black leading-[0.95] tracking-tight md:text-6xl">
                   Títulos nuevos{" "}
-                  <span className="text-white-500">todas las semanas</span>
+                  <span className="text-zinc-100-500">todas las semanas</span>
                 </h2>
                 <p className="mt-6 text-lg leading-relaxed text-zinc-200">
                   El universo manga crece constantemente. Nuestro catálogo se
@@ -530,10 +580,10 @@
                 {NOVEDADES.map((n) => (
                   <div
                     key={n.titulo}
-                    className="group relative overflow-hidden rounded-[24px] border border-zinc-800 bg-zinc-900 p-5 transition hover:border-zinc-700"
+                    className="group relative overflow-hidden rounded-[24px] border border-zinc-800 bg-zinc-900/60 backdrop-blur-md border border-zinc-800 p-5 transition-all duration-300 hover:border-zinc-700"
                   >
                     {n.badge && (
-                      <span className="absolute right-4 top-4 z-10 rounded-full bg-red-600 px-2.5 py-1 text-xs font-bold tracking-wide">
+                      <span className="absolute right-4 top-4 z-10 rounded-full bg-red-500 px-2.5 py-1 text-xs font-bold tracking-wide">
                         {n.badge}
                       </span>
                     )}
@@ -555,7 +605,7 @@
                       href={WA(`Hola! Quiero consultar precio mayorista de ${n.titulo}`)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-4 flex items-center gap-1.5 text-sm font-medium text-red-400 transition hover:text-red-300"
+                      className="mt-4 flex items-center gap-1.5 text-sm font-medium text-red-400 transition-all duration-300 hover:text-red-300"
                     >
                       Consultar precio
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-3.5 w-3.5">
@@ -571,7 +621,7 @@
                   href={WA("Hola! Quiero ver el catálogo completo de MangaHub")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-2xl border border-zinc-700 bg-zinc-900 px-7 py-3.5 text-sm font-semibold text-zinc-300 transition hover:border-zinc-500 hover:bg-zinc-800"
+                  className="inline-flex items-center gap-2 rounded-2xl border border-zinc-700 bg-zinc-900/60 backdrop-blur-md border border-zinc-800 px-7 py-3.5 text-sm font-semibold text-zinc-300 transition-all duration-300 hover:border-zinc-500 hover:bg-zinc-800"
                 >
                   <WhatsAppIcon className="h-4 w-4 text-green-400" />
                   Ver catálogo completo por WhatsApp
@@ -583,7 +633,7 @@
           {/* ── BENEFICIOS ──────────────────────────────────────────────────── */}
           <section
             id="beneficios"
-            className="border-b border-zinc-900 bg-black px-6 py-28"
+            className="border-b border-zinc-900 bg-zinc-950 px-6 py-28"
             style={{ scrollMarginTop: "80px" }}
           >
             <div className="mx-auto max-w-7xl">
@@ -591,9 +641,9 @@
                 <div className="mb-5 inline-flex rounded-full border border-red-500/20 bg-red-500/10 px-4 py-2 text-sm text-red-400">
                   Beneficios para tu negocio
                 </div>
-                <h2 className="text-5xl font-black leading-[0.95] tracking-tight md:text-6xl">
-                  Todo lo que necesitás para crear tu - {" "}
-                  <span className="text-red-500">Comiqueria</span>
+                <h2 className="text-5xl font-black leading-[0.99] tracking-tight md:text-6xl">
+                  Todo lo que necesitás para crear tu {" "}
+                  <span className="text-red-400">Comiqueria</span>
                 </h2>
               </div>
 
@@ -601,13 +651,13 @@
   {BENEFICIOS.map((b) => (
     <div
       key={b.titulo}
-      className="group flex gap-5 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6 transition hover:border-red-500/20 hover:bg-zinc-900"
+      className="group flex gap-5 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6 transition-all duration-300 hover:border-red-500/20 hover:bg-zinc-900/60 backdrop-blur-md border border-zinc-800"
     >
       <div className="mt-0.5 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl border border-red-500/20 bg-red-500/10 text-red-400 transition group-hover:bg-red-500/20">
         {b.icon}
       </div>
       <div>
-        <h3 className="font-bold text-white">{b.titulo}</h3>
+        <h3 className="font-bold text-zinc-100">{b.titulo}</h3>
         <p className="mt-1.5 text-sm leading-relaxed text-zinc-400">{b.desc}</p>
       </div>
     </div>
@@ -628,7 +678,7 @@
                   Simple · Sin contratos · Sin burocracia
                 </div>
                 <h2 className="text-5xl font-black leading-[0.95] tracking-tight md:text-6xl">
-                  Cómo <span className="text-white-500">funciona</span>
+                  Cómo <span className="text-zinc-100-500">funciona</span>
                 </h2>
                 <p className="mt-6 text-lg leading-relaxed text-zinc-200">
                   Empezar es fácil. Te acompañamos para que puedas dar 
@@ -642,10 +692,10 @@
                     {i < PASOS.length - 1 && (
                       <div className="absolute left-full top-8 hidden h-px w-full -translate-x-4 bg-gradient-to-r from-zinc-800 to-transparent lg:block" />
                     )}
-                    <div className="relative mb-8 flex h-20 w-20 items-center justify-center rounded-3xl border border-zinc-800 bg-zinc-900">
+                    <div className="relative mb-8 flex h-20 w-20 items-center justify-center rounded-3xl border border-zinc-800 bg-zinc-900/60 backdrop-blur-md border border-zinc-800">
 
     {/* Numero */}
-    <div className="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-red-600 text-sm font-black text-white">
+    <div className="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-red-500 text-sm font-black text-zinc-100">
       {p.n}
     </div>
 
@@ -658,7 +708,7 @@
         viewBox="0 0 24 24"
         strokeWidth={1.8}
         stroke="currentColor"
-        className="h-10 w-10 text-white"
+        className="h-10 w-10 text-zinc-100"
       >
         <path
           strokeLinecap="round"
@@ -675,7 +725,7 @@
         viewBox="0 0 24 24"
         strokeWidth={1.8}
         stroke="currentColor"
-        className="h-10 w-10 text-white"
+        className="h-10 w-10 text-zinc-100"
       >
         <path
           strokeLinecap="round"
@@ -692,7 +742,7 @@
         viewBox="0 0 24 24"
         strokeWidth={1.8}
         stroke="currentColor"
-        className="h-10 w-10 text-white"
+        className="h-10 w-10 text-zinc-100"
       >
         <path
           strokeLinecap="round"
@@ -709,7 +759,7 @@
         viewBox="0 0 24 24"
         strokeWidth={1.8}
         stroke="currentColor"
-        className="h-10 w-10 text-white"
+        className="h-10 w-10 text-zinc-100"
       >
         <path
           strokeLinecap="round"
@@ -733,7 +783,7 @@
           {/* ── TESTIMONIOS ─────────────────────────────────────────────────── */}
           <section
             id="testimonios"
-            className="border-b border-zinc-900 bg-black px-6 py-28"
+            className="border-b border-zinc-900 bg-zinc-950 px-6 py-28"
             style={{ scrollMarginTop: "80px" }}
           >
             <div className="mx-auto max-w-7xl">
@@ -743,7 +793,7 @@
                 </div>
                 <h2 className="text-5xl font-black leading-[0.95] tracking-tight md:text-6xl">
                   Negocios que ya{" "}
-                  <span className="text-white-500">están creciendo</span>
+                  <span className="text-zinc-100-500">están creciendo</span>
                 </h2>
               </div>
 
@@ -751,9 +801,9 @@
                 {TESTIMONIOS.map((t) => (
                   <div
                     key={t.nombre}
-                    className="flex flex-col rounded-[24px] border border-zinc-800 bg-zinc-900 p-8 transition hover:border-zinc-700"
+                    className="flex flex-col rounded-[24px] border border-zinc-800 bg-zinc-900/60 backdrop-blur-md border border-zinc-800 p-8 transition-all duration-300 hover:border-zinc-700"
                   >
-                    <div className="mb-4 text-red-500/60 text-4xl font-serif leading-none">"</div>
+                    <div className="mb-4 text-red-400/60 text-4xl font-serif leading-none">"</div>
                     <p className="flex-1 text-sm leading-relaxed text-zinc-300 italic">
                       {t.texto}
                     </p>
@@ -762,10 +812,10 @@
                         {t.ini}
                       </div>
                       <div>
-                        <div className="font-semibold text-white">{t.nombre}</div>
+                        <div className="font-semibold text-zinc-100">{t.nombre}</div>
                         <div className="text-xs text-zinc-300">{t.rol}</div>
                       </div>
-                      <div className="ml-auto text-sm text-red-500">★★★★★</div>
+                      <div className="ml-auto text-sm text-red-400">★★★★★</div>
                     </div>
                   </div>
                 ))}
@@ -776,7 +826,7 @@
           {/* ── CTA ─────────────────────────────────────────────────────────── */}
           <section
             id="contacto"
-            className="relative overflow-hidden bg-black px-6 py-32"
+            className="relative overflow-hidden bg-zinc-950 px-6 py-32"
             style={{ scrollMarginTop: "80px" }}
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.13),transparent_45%)]" />
@@ -786,7 +836,7 @@
                 Es tu momento
               </div>
               <h2 className="text-5xl font-black leading-[0.95] tracking-tight md:text-7xl">
-                Sumate a Manga<span className="text-red-500">Hub</span>
+                Sumate a Manga<span className="text-red-400">Hub</span>
               </h2>
               <p className="mx-auto mt-8 max-w-xl text-lg leading-relaxed text-zinc-200">
                 Convertí tu pasión por el anime y el manga en un proyecto real.
@@ -797,7 +847,7 @@
                   href={WA("Hola! Quiero sumarme a MangaHub y conocer las condiciones mayoristas")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 rounded-2xl bg-green-500 px-10 py-5 text-lg font-semibold transition hover:scale-[1.02] hover:bg-green-400shadow-green-500/20 active:scale-[0.99]"
+                  className="flex items-center gap-2.5 rounded-2xl bg-green-500 px-10 py-5 text-lg font-semibold transition-all duration-300 hover:scale-[1.02] hover:bg-green-400shadow-green-500/20 active:scale-[0.99]"
                 >
                   <WhatsAppIcon className="h-6 w-6" />
                   Quiero consultar por WhatsApp
@@ -835,7 +885,7 @@
                   href={WA("Hola! Tengo una consulta sobre MangaHub")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 inline-flex items-center gap-2 rounded-xl bg-zinc-800 px-6 py-3 text-sm font-medium text-white transition hover:bg-zinc-700"
+                  className="mt-4 inline-flex items-center gap-2 rounded-xl bg-zinc-800 px-6 py-3 text-sm font-medium text-zinc-100 transition-all duration-300 hover:bg-zinc-700"
                 >
                   <WhatsAppIcon className="h-4 w-4 text-green-400" />
                   Escribinos directamente
@@ -845,21 +895,21 @@
           </section>
 
           {/* ── FOOTER ──────────────────────────────────────────────────────── */}
-          <footer className="border-t border-zinc-900 bg-black px-6 py-10 text-zinc-300">
+          <footer className="border-t border-zinc-900 bg-zinc-950 px-6 py-10 text-zinc-300">
             <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 md:flex-row">
 
               <div>
-                <span className="text-lg font-black text-white">
-                  Manga<span className="text-red-500">Hub</span>
+                <span className="text-lg font-black text-zinc-100">
+                  Manga<span className="text-red-400">Hub</span>
                 </span>
                 <p className="mt-1 text-xs text-zinc-600">Manga · Anime · Cultura Geek</p>
               </div>
 
               <div className="flex items-center gap-6 text-sm">
-                <a href="#novedades" className="transition hover:text-white">Novedades</a>
-                <a href="#beneficios" className="transition hover:text-white">Beneficios</a>
-                <a href="#como" className="transition hover:text-white">Cómo funciona</a>
-                <a href="#faq" className="transition hover:text-white">FAQ</a>
+                <a href="#novedades" className="transition-all duration-300 hover:text-zinc-100">Novedades</a>
+                <a href="#beneficios" className="transition-all duration-300 hover:text-zinc-100">Beneficios</a>
+                <a href="#como" className="transition-all duration-300 hover:text-zinc-100">Cómo funciona</a>
+                <a href="#faq" className="transition-all duration-300 hover:text-zinc-100">FAQ</a>
               </div>
 
               <div className="text-xs">© 2026 MangaHub. Todos los derechos reservados.</div>
@@ -872,7 +922,7 @@
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Contactar por WhatsApp"
-            className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 rounded-full bg-green-500 px-5 py-3.5 text-sm font-semibold text-white shadow-lg shadow-green-900/40 transition hover:bg-green-400 hover:scale-105 active:scale-95 md:hidden"
+            className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 rounded-full bg-green-500 px-5 py-3.5 text-sm font-semibold text-zinc-100 shadow-lg shadow-green-900/40 transition-all duration-300 hover:bg-green-400 hover:scale-105 active:scale-95 md:hidden"
           >
             <WhatsAppIcon className="h-5 w-5" />
             Escribinos
