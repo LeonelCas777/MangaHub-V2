@@ -339,7 +339,7 @@ function FaqItem({ q, a }) {
 // "SoraBooks" en blanco, "Store" en rojo
 const Logo = ({ className = "text-2xl" }) => (
   <span className={`font-black tracking-tight ${className}`}>
-    <span className="text-zinc-100">SORA</span><span className="text-red-400">BOOKS</span>
+    <span className="text-zinc-100">Sora</span><span className="text-red-400">Books</span>
   </span>
 );
 
