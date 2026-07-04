@@ -406,7 +406,7 @@ export default function App() {
 
               <h1 className="max-w-2xl text-5xl font-black leading-[0.95] tracking-tight md:text-7xl">
                 Conectá con el mundo del{" "}
-                <span className="text-red-400">MANGA</span>
+                <span className="text-[#E2080A]">MANGA</span>
               </h1>
 
               <p className="mt-8 max-w-xl text-lg leading-relaxed text-zinc-200">
