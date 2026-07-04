@@ -163,14 +163,14 @@ const TESTIMONIOS = [
     nombre: "Martina Lopez.",
     rol: "Comiquería en · CABA",
     texto:
-      "Empecé mi comiquería con MangaHub y en seis meses ya tenía más de 80 títulos en stock. La atención es increíble y los tiempos de entrega son exactos. Es el proveedor que estaba buscando.",
+      "Empecé mi comiquería con Kurogane y en seis meses ya tenía más de 80 títulos en stock. La atención es increíble y los tiempos de entrega son exactos. Es el proveedor que estaba buscando.",
   },
   {
     ini: "GR",
     nombre: "Gonzalo Rolo.",
     rol: "Tienda Online · Rosario",
     texto:
-      "Los precios mayoristas son reales, el catálogo siempre está actualizado y mi asesor me avisa cada vez que entra algo nuevo. Escalé mi negocio a otro nivel con MangaHub.",
+      "Los precios mayoristas son reales, el catálogo siempre está actualizado y mi asesor me avisa cada vez que entra algo nuevo. Escalé mi negocio a otro nivel con Kurogane.",
   },
   {
     ini: "SV",
@@ -336,13 +336,21 @@ function FaqItem({ q, a }) {
 }
 
 // ─── COMPONENTE DE LOGO ───────────────────────────────────────────────────────
-// "MangaHub" en blanco, "Store" en rojo
-const Logo = ({ className = "text-2xl" }) => (
-  <span className={`font-black tracking-tight ${className}`}>
-    <span className="text-zinc-100">Manga</span><span className="text-red-400">Hub</span>
-  </span>
+// "Kurogane" en blanco, "Store" en rojo
+const Logo = ({ className = "" }) => (
+  <img
+    src="/Imagenes/logo isotipo.svg"
+    alt="Kurogane"
+    className={`h-16 w-auto ${className}`}
+  />
 );
-
+const LogoCompleto = ({ className = "" }) => (
+  <img
+    src="/Imagenes/logo 3.svg"
+    alt="Kurogane"
+    className={`h-24 w-auto ${className}`}
+  />
+);
 // ─── APP PRINCIPAL ────────────────────────────────────────────────────────────
 export default function App() {
   return (
@@ -350,8 +358,8 @@ export default function App() {
       {/*
         NOTA: Agregá estas meta tags en tu index.html dentro de <head>:
 
-        <meta name="description" content="MangaHub — Mayorista de mangas para comiquerías, emprendedores y revendedores de todo el país." />
-        <meta property="og:title" content="MangaHub — Accedé a los mangas más buscados" />
+        <meta name="description" content="Kurogane — Mayorista de mangas para comiquerías, emprendedores y revendedores de todo el país." />
+        <meta property="og:title" content="Kurogane — Accedé a los mangas más buscados" />
         <meta property="og:description" content="Más de 300 títulos disponibles. Envíos a todo el país. Atención personalizada." />
         <meta property="og:image" content="/og-image.jpg" />
         <meta property="og:type" content="website" />
@@ -407,7 +415,7 @@ export default function App() {
 
               <div className="mt-10 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href={WA("Hola! Quiero consultar sobre venta mayorista de mangas en MangaHub.")}
+                  href={WA("Hola! Quiero consultar sobre venta mayorista de mangas en Kurogane.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 rounded-2xl bg-green-500 px-8 py-4 text-base font-semibold transition-all duration-300 hover:scale-[1.02] hover:bg-red-500 active:scale-[0.99]"
@@ -593,7 +601,7 @@ export default function App() {
 
             <div className="mt-10 text-center">
               <a
-                href={WA("Hola! Quiero ver el catálogo completo de MangaHub")}
+                href={WA("Hola! Quiero ver el catálogo completo de Kurogane")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-2xl border border-zinc-700 bg-zinc-900/60 backdrop-blur-md border border-zinc-800 px-7 py-3.5 text-sm font-semibold text-zinc-300 transition-all duration-300 hover:border-zinc-500 hover:bg-zinc-800"
@@ -760,7 +768,9 @@ export default function App() {
               Es tu momento
             </div>
             <h2 className="text-5xl font-black leading-[0.95] tracking-tight md:text-7xl">
-              Sumate a <Logo className="text-5xl md:text-7xl inline" />
+              Sumate a la comunidad<div className="my-10">
+    <LogoCompleto className="mx-auto h-32 md:h-36 w-auto" />
+</div>
             </h2>
             <p className="mx-auto mt-8 max-w-xl text-lg leading-relaxed text-zinc-200">
               Convertí tu pasión por el anime y el manga en un proyecto real.
@@ -768,7 +778,7 @@ export default function App() {
 
             <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
-                href={WA("Hola! Quiero sumarme a MangaHub y conocer las condiciones mayoristas")}
+                href={WA("Hola! Quiero sumarme a Kurogane y conocer las condiciones mayoristas")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2.5 rounded-2xl bg-green-500 px-10 py-5 text-lg font-semibold transition-all duration-300 hover:scale-[1.02] hover:bg-green-400 shadow-lg shadow-green-500/20 active:scale-[0.99]"
@@ -806,7 +816,7 @@ export default function App() {
             <div className="mt-12 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-8 text-center">
               <p className="text-zinc-200">¿Tenés alguna otra consulta?</p>
               <a
-                href={WA("Hola! Tengo una consulta sobre MangaHub")}
+                href={WA("Hola! Tengo una consulta sobre Kurogane")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 inline-flex items-center gap-2 rounded-xl bg-zinc-800 px-6 py-3 text-sm font-medium text-zinc-100 transition-all duration-300 hover:bg-zinc-700"
@@ -834,13 +844,13 @@ export default function App() {
               <a href="#faq" className="transition-all duration-300 hover:text-zinc-100">FAQ</a>
             </div>
 
-            <div className="text-xs">© 2026 MangaHub. Todos los derechos reservados.</div>
+            <div className="text-xs">© 2026 Kurogane. Todos los derechos reservados.</div>
           </div>
         </footer>
 
         {/* ── BOTÓN FLOTANTE WHATSAPP (mobile) ────────────────────────────── */}
         <a
-          href={WA("Hola! Quiero información sobre MangaHub")}
+          href={WA("Hola! Quiero información sobre Kurogane")}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Contactar por WhatsApp"

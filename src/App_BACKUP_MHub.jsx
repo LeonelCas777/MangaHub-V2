@@ -166,14 +166,14 @@
         nombre: "Martina Lopez.",
         rol: "Comiquería en · CABA",
         texto:
-          "Empecé mi comiquería con MangaHub y en seis meses ya tenía más de 80 títulos en stock. La atención es increíble y los tiempos de entrega son exactos. Es el proveedor que estaba buscando.",
+          "Empecé mi comiquería con Mangahup y en seis meses ya tenía más de 80 títulos en stock. La atención es increíble y los tiempos de entrega son exactos. Es el proveedor que estaba buscando.",
       },
       {
         ini: "GR",
         nombre: "Gonzalo Rolo.",
         rol: "Tienda Online · Rosario",
         texto:
-          "Los precios mayoristas son reales, el catálogo siempre está actualizado y mi asesor me avisa cada vez que entra algo nuevo. Escalé mi negocio a otro nivel con MangaHub.",
+          "Los precios mayoristas son reales, el catálogo siempre está actualizado y mi asesor me avisa cada vez que entra algo nuevo. Escalé mi negocio a otro nivel con Mangahup.",
       },
       {
         ini: "SV",
@@ -345,8 +345,8 @@
           {/*
             NOTA: Agregá estas meta tags en tu index.html dentro de <head>:
 
-            <meta name="description" content="MangaHub — Mayorista de mangas para comiquerías, emprendedores y revendedores de todo el país." />
-            <meta property="og:title" content="MangaHub — Accedé a los mangas más buscados" />
+            <meta name="description" content="Mangahup — Mayorista de mangas para comiquerías, emprendedores y revendedores de todo el país." />
+            <meta property="og:title" content="Mangahup — Accedé a los mangas más buscados" />
             <meta property="og:description" content="Más de 300 títulos disponibles. Envíos a todo el país. Atención personalizada." />
             <meta property="og:image" content="/og-image.jpg" />
             <meta property="og:type" content="website" />
@@ -359,7 +359,7 @@
               <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
 
                 <a href="#hero" className="text-2xl font-black tracking-tight">
-                  Manga<span className="text-red-400">Hub</span>
+                  Manga<span className="text-red-400">hup</span>
                 </a>
 
                 <nav className="ml-auto hidden items-center gap-8 text-sm font-medium text-zinc-200 md:flex">
@@ -404,7 +404,7 @@
 
                   <div className="mt-10 flex flex-col gap-3 sm:flex-row">
                     <a
-                      href={WA("Hola! Quiero consultar sobre venta mayorista de mangas en MangaHub")}
+                      href={WA("Hola! Quiero consultar sobre venta mayorista de mangas en Mangahup")}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2 rounded-2xl bg-green-500 px-8 py-4 text-base font-semibold transition-all duration-300 hover:scale-[1.02] hover:bg-red-500 active:scale-[0.99]"
@@ -618,7 +618,7 @@
 
                 <div className="mt-10 text-center">
                   <a
-                    href={WA("Hola! Quiero ver el catálogo completo de MangaHub")}
+                    href={WA("Hola! Quiero ver el catálogo completo de Mangahup")}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-2xl border border-zinc-700 bg-zinc-900/60 backdrop-blur-md border border-zinc-800 px-7 py-3.5 text-sm font-semibold text-zinc-300 transition-all duration-300 hover:border-zinc-500 hover:bg-zinc-800"
@@ -836,7 +836,7 @@
                   Es tu momento
                 </div>
                 <h2 className="text-5xl font-black leading-[0.95] tracking-tight md:text-7xl">
-                  Sumate a Manga<span className="text-red-400">Hub</span>
+                  Sumate a Manga<span className="text-red-400">hup</span>
                 </h2>
                 <p className="mx-auto mt-8 max-w-xl text-lg leading-relaxed text-zinc-200">
                   Convertí tu pasión por el anime y el manga en un proyecto real.
@@ -844,7 +844,7 @@
 
                 <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
                   <a
-                    href={WA("Hola! Quiero sumarme a MangaHub y conocer las condiciones mayoristas")}
+                    href={WA("Hola! Quiero sumarme a Mangahup y conocer las condiciones mayoristas")}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2.5 rounded-2xl bg-green-500 px-10 py-5 text-lg font-semibold transition-all duration-300 hover:scale-[1.02] hover:bg-green-400shadow-green-500/20 active:scale-[0.99]"
@@ -882,7 +882,7 @@
                 <div className="mt-12 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-8 text-center">
                   <p className="text-zinc-200">¿Tenés alguna otra consulta?</p>
                   <a
-                    href={WA("Hola! Tengo una consulta sobre MangaHub")}
+                    href={WA("Hola! Tengo una consulta sobre Mangahup")}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-4 inline-flex items-center gap-2 rounded-xl bg-zinc-800 px-6 py-3 text-sm font-medium text-zinc-100 transition-all duration-300 hover:bg-zinc-700"
@@ -900,7 +900,7 @@
 
                 <div>
                   <span className="text-lg font-black text-zinc-100">
-                    Manga<span className="text-red-400">Hub</span>
+                    Manga<span className="text-red-400">hup</span>
                   </span>
                   <p className="mt-1 text-xs text-zinc-600">Manga · Anime · Cultura Geek</p>
                 </div>
@@ -912,13 +912,13 @@
                   <a href="#faq" className="transition-all duration-300 hover:text-zinc-100">FAQ</a>
                 </div>
 
-                <div className="text-xs">© 2026 MangaHub. Todos los derechos reservados.</div>
+                <div className="text-xs">© 2026 Mangahup. Todos los derechos reservados.</div>
               </div>
             </footer>
 
             {/* ── BOTÓN FLOTANTE WHATSAPP (mobile) ────────────────────────────── */}
             <a
-              href={WA("Hola! Quiero información sobre MangaHub")}
+              href={WA("Hola! Quiero información sobre Mangahup")}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Contactar por WhatsApp"
