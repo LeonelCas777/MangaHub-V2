@@ -339,14 +339,14 @@ function FaqItem({ q, a }) {
 // "Kurogane" en blanco, "Store" en rojo
 const Logo = ({ className = "" }) => (
   <img
-    src="/Public/Isotipo.svg"
+    src="/Isotipo.svg"
     alt="Kurogane"
     className={`h-16 w-auto ${className}`}
   />
 );
 const LogoCompleto = ({ className = "" }) => (
   <img
-    src="/Public/logonombre.svg"
+    src="/logonombre.svg"
     alt="Kurogane"
     className={`h-24 w-auto ${className}`}
   />
