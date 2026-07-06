@@ -507,7 +507,7 @@ export default function App() {
               </div>
               <h2 className="text-4xl font-black leading-tight text-zinc-100 md:text-5xl">
                 Distribución oficial de mangas{" "}
-                <span className="text-red-400">IVREA</span>
+                <span className="text-[#E2080A] drop-shadow-sm">IVREA</span>
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-zinc-300">
                 Trabajamos con tiendas y emprendimientos de todo el país
@@ -626,7 +626,7 @@ export default function App() {
               </div>
               <h2 className="text-5xl font-black leading-[0.99] tracking-tight md:text-6xl">
                 Todo lo que necesitás para crear tu{" "}
-                <span className="text-red-400">Comiqueria</span>
+                <span className="text-[#E2080A] drop-shadow-sm">COMIQUERIA</span>
               </h2>
             </div>
 
