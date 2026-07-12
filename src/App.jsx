@@ -221,7 +221,7 @@ const CLIENTES = [
 const FAQS = [
   {
     q: "¿Hacen envíos a todo el país?",
-    a: "Sí. Trabajamos con correo y transportes que llegan a todo el territorio nacional. Los pedidos se despachan en 48 horas hábiles desde la confirmación del pago.",
+    a: "Sí. Trabajamos con correo y transportes que llegan a todo el territorio nacional. Los pedidos se despachan en 7 días hábiles desde la confirmación del pago.",
   },
   {
     q: "¿Cuál es el pedido mínimo?",
