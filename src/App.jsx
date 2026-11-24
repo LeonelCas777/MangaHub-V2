@@ -351,6 +351,71 @@ const LogoCompleto = ({ className = "" }) => (
     className={`h-24 w-auto ${className}`}
   />
 );
+function NewsletterForm() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState("idle");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (status === "loading") return;
+
+    setStatus("loading");
+    setMessage("");
+
+    try {
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(data.message || "No pudimos registrar tu email. Intentá nuevamente.");
+      }
+
+      setStatus("success");
+      setMessage("¡Listo! Tu email quedó registrado para recibir novedades.");
+      setEmail("");
+    } catch (error) {
+      setStatus("error");
+      setMessage(error.message || "Ocurrió un error. Intentá nuevamente.");
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="mx-auto mt-8 grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-[1fr_auto]">
+      <label htmlFor="newsletter-email" className="sr-only">Tu email</label>
+      <input
+        id="newsletter-email"
+        type="email"
+        name="email"
+        autoComplete="email"
+        required
+        maxLength={254}
+        value={email}
+        onChange={(event) => setEmail(event.target.value)}
+        placeholder="Ingresá tu email"
+        disabled={status === "loading" || status === "success"}
+        className="min-w-0 flex-1 rounded-xl border border-zinc-700 bg-zinc-950 px-5 py-4 text-zinc-100 outline-none transition placeholder:text-zinc-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 disabled:opacity-60"
+      />
+      <button
+        type="submit"
+        disabled={status === "loading" || status === "success"}
+        className="rounded-xl bg-red-600 px-7 py-4 font-bold text-white transition hover:bg-red-500 disabled:cursor-not-allowed disabled:opacity-60"
+      >
+        {status === "loading" ? "Enviando..." : status === "success" ? "Suscripto" : "Quiero recibir novedades"}
+      </button>
+      {message && (
+        <p role="status" aria-live="polite" className={`sm:col-span-2 text-sm ${status === "success" ? "text-green-400" : "text-red-400"}`}>
+          {message}
+        </p>
+      )}
+    </form>
+  );
+}
+
 // ─── APP PRINCIPAL ────────────────────────────────────────────────────────────
 export default function App() {
   return (
@@ -709,6 +774,30 @@ export default function App() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ── SUSCRIPCIÓN A NOVEDADES ─────────────────────────────────────── */}
+        <section
+          id="novedades-email"
+          className="border-b border-zinc-900 bg-zinc-950 px-6 py-16"
+        >
+          <div className="mx-auto max-w-4xl rounded-3xl border border-zinc-800 bg-zinc-900/50 px-6 py-10 text-center shadow-2xl shadow-black/20 md:px-12">
+            <div className="mb-5 inline-flex rounded-full border border-red-500/20 bg-red-500/10 px-4 py-2 text-sm text-red-400">
+              Novedades Kurogane
+            </div>
+            <h2 className="text-3xl font-black tracking-tight text-zinc-100 md:text-4xl">
+              Enterate de las últimas novedades
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-zinc-300">
+              Dejanos tu email y recibí información sobre lanzamientos, reposiciones y novedades del catálogo.
+            </p>
+
+            <NewsletterForm />
+
+            <p className="mt-4 text-xs text-zinc-500">
+              Solo te enviaremos novedades de Kurogane. Podés darte de baja cuando quieras.
+            </p>
           </div>
         </section>
 
